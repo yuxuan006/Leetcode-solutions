@@ -12,7 +12,7 @@ public:
     void merge(int A[], int m, int B[], int n) {
         if(m == 0){
             for(int q = 0; q < n; ++q){
-                memset(A, B[1], sizeof(A));
+                memset(A, B[q], sizeof(A));
             }
         }
         if(n == 0) return;
