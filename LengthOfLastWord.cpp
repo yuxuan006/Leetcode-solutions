@@ -15,22 +15,21 @@
 class Solution {
 public:
     int lengthOfLastWord(const char *s) {
-        int sz = strlen(s);
-        if (sz == 0){
-            return 0;
-        }
-        int res = 0;
-        for (int i = sz-1; i >= 0; i--){
-            if (s[i]!=' '){
-                res++;
+        if(strlen(s) == 0) return 0;
+        int len = strlen(s)-1;
+        int count = 0;
+        while(len>= 0){
+            if(s[len] != ' '){
+            count++;
+            len--;
             }
             else{
-                if (res > 0){
-                    return res;
+                len--;
+                if(count>0) {
+                    return count;
                 }
             }
         }
-        return res;
-        
+        return  count;
     }
 };
